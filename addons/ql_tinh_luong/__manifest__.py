@@ -1,0 +1,27 @@
+# -*- coding: utf-8 -*-
+{
+    'name': 'ql_tinh_luong',
+    'summary': 'Quản lý tính lương cơ bản',
+    'description': 'Module nền tảng quản lý bảng lương tháng cho nhân viên',
+    'author': 'Your Company',
+    'website': 'http://www.yourcompany.com',
+    'category': 'Human Resources',
+    'version': '0.1',
+    'depends': ['base', 'ql_nhan_su'],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/salary_rule.xml',
+        'views/salary_structure.xml',
+        'views/hop_dong.xml',
+        'views/bang_luong.xml',
+        'views/thong_ke.xml',
+        'views/report.xml',
+        'views/wizard.xml',
+        'views/menu.xml',
+        'data/salary_rule_demo.xml',
+        'data/salary_structure_demo.xml',
+        'data/hop_dong_demo.xml',
+        'data/bang_luong_demo.xml',
+    ],
+    'demo': [],
+}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_diem_danh_form" model="ir.ui.view">
+            <field name="name">diem_danh.form</field>
+            <field name="model">diem_danh</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box"/>
+                        <group>
+                            <group string="Thông Tin Điểm Danh">
+                                <field name="nhan_vien_id"/>
+                                <field name="ngay_lam_viec"/>
+                                <field name="ngay_trong_tuan" readonly="1"/>
+                            </group>
+                            <group string="Chi tiết Ca Làm Việc">
+                                <field name="lich_lam_viec_id"/>
+                                <field name="ca_lam_viec_id" readonly="1"/>
+                                <field name="loai_cong_viec" readonly="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Giờ Làm Việc">
+                                <field name="gio_check_in"/>
+                                <field name="gio_check_out"/>
+                                <field name="so_gio_lam_thuc_te"/>
+                            </group>
+                            <group string="Tính Công">
+                                <field name="so_cong"/>
+                                <field name="di_muon_phut"/>
+                                <field name="ve_som_phut"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Trạng Thái">
+                                <field name="trang_thai_diem_danh" readonly="1"/>
+                                <field name="trang_thai_phe_duyet"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="ghi_chu" nolabel="1" placeholder="Ghi chú..."/>
+                        </group>
+                        <footer>
+                            <button name="check_in_out" type="object" string="Check-In/Out" class="oe_highlight"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_diem_danh_tree" model="ir.ui.view">
+            <field name="name">diem_danh.tree</field>
+            <field name="model">diem_danh</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nhan_vien_id"/>
+                    <field name="ngay_lam_viec"/>
+                    <field name="ngay_trong_tuan"/>
+                    <field name="gio_check_in"/>
+                    <field name="gio_check_out"/>
+                    <field name="loai_cong_viec"/>
+                    <field name="so_gio_lam_thuc_te"/>
+                    <field name="di_muon_phut"/>
+                    <field name="ve_som_phut"/>
+                    <field name="so_cong"/>
+                    <field name="trang_thai_diem_danh"  decoration-danger="trang_thai_diem_danh == 'muon'" 
+                                                        decoration-success="trang_thai_diem_danh == 'som'"/>
+                    <field name="trang_thai_phe_duyet" decoration-success="trang_thai_phe_duyet == 'approved'"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="diem_danh_search" model="ir.ui.view">
+            <field name="name">diem_danh.search</field>
+            <field name="model">diem_danh</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ngay_lam_viec"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_diem_danh" model="ir.actions.act_window">
+            <field name="name">Bảng Điểm Danh</field>
+            <field name="res_model">diem_danh</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="diem_danh_search"/>
+        </record>
+    </data>
+</odoo>

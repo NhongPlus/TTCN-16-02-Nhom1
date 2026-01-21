@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Contract Tree View -->
+    <record id="view_hop_dong_tree" model="ir.ui.view">
+        <field name="name">hop.dong.tree</field>
+        <field name="model">hop_dong</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="nhan_vien_id"/>
+                <field name="type_id"/>
+                <field name="basic_salary"/>
+                <field name="date_start"/>
+                <field name="date_end"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Contract Form View -->
+    <record id="view_hop_dong_form" model="ir.ui.view">
+        <field name="name">hop.dong.form</field>
+        <field name="model">hop_dong</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_open" type="object" string="Kích hoạt" class="btn-primary" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                    <button name="action_close" type="object" string="Kết thúc" attrs="{'invisible': [('state', '!=', 'open')]}"/>
+                    <field name="state" widget="statusbar" options="{'clickable': True}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="nhan_vien_id"/>
+                            <field name="type_id"/>
+                        </group>
+                        <group>
+                            <field name="salary_structure_id"/>
+                            <field name="basic_salary"/>
+                        </group>
+                    </group>
+                    
+                    <group>
+                        <group>
+                            <field name="date_start"/>
+                            <field name="date_end"/>
+                        </group>
+                    </group>
+                    
+                    <separator string="Phụ cấp"/>
+                    <field name="allowance_ids" nolabel="1">
+                        <tree editable="bottom">
+                            <field name="name"/>
+                            <field name="amount"/>
+                            <field name="type_id"/>
+                        </tree>
+                    </field>
+                    
+                    <group>
+                        <field name="mo_ta" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Contract Search View -->
+    <record id="view_hop_dong_search" model="ir.ui.view">
+        <field name="name">hop.dong.search</field>
+        <field name="model">hop_dong</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="nhan_vien_id"/>
+                <field name="type_id"/>
+                <filter name="open" string="Hiệu lực" domain="[('state', '=', 'open')]"/>
+                <filter name="draft" string="Nháp" domain="[('state', '=', 'draft')]"/>
+                <filter name="close" string="Kết thúc" domain="[('state', '=', 'close')]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Contract Action -->
+    <record id="action_hop_dong" model="ir.actions.act_window">
+        <field name="name">Hợp đồng lao động</field>
+        <field name="res_model">hop_dong</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Quản lý hợp đồng lao động và lương cơ bản của nhân viên
+            </p>
+        </field>
+    </record>
+
+    <!-- Contract Type (demo data) -->
+    <record id="hop_dong_type_fixed" model="hop_dong.type">
+        <field name="name">Hợp đồng Xác định (Vô thời hạn)</field>
+        <field name="code">FIXED</field>
+    </record>
+    <record id="hop_dong_type_temporary" model="hop_dong.type">
+        <field name="name">Hợp đồng Tạm thời</field>
+        <field name="code">TEMPORARY</field>
+    </record>
+</odoo>

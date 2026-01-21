@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Salary Structure Tree View -->
+    <record id="view_salary_structure_tree" model="ir.ui.view">
+        <field name="name">salary.structure.tree</field>
+        <field name="model">salary.structure</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="mo_ta"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Salary Structure Form View -->
+    <record id="view_salary_structure_form" model="ir.ui.view">
+        <field name="name">salary.structure.form</field>
+        <field name="model">salary.structure</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="mo_ta" nolabel="1"/>
+                    </group>
+                    <separator string="Quy tắc lương"/>
+                    <field name="salary_rule_ids" nolabel="1">
+                        <tree>
+                            <field name="code"/>
+                            <field name="name"/>
+                            <field name="category_id"/>
+                            <field name="sequence"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Salary Structure Search View -->
+    <record id="view_salary_structure_search" model="ir.ui.view">
+        <field name="name">salary.structure.search</field>
+        <field name="model">salary.structure</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <filter name="active" string="Hoạt động" domain="[('active', '=', True)]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Salary Structure Action -->
+    <record id="action_salary_structure" model="ir.actions.act_window">
+        <field name="name">Cấu trúc lương</field>
+        <field name="res_model">salary.structure</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Tạo cấu trúc lương cho từng vị trí công việc
+            </p>
+        </field>
+    </record>
+</odoo>

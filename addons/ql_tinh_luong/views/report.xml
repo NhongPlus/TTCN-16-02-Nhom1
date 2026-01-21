@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Report Model Views -->
+    <record id="view_bang_luong_report_tree" model="ir.ui.view">
+        <field name="name">bang.luong.report.tree</field>
+        <field name="model">bang_luong.report</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nhan_vien_id"/>
+                <field name="thang"/>
+                <field name="nam"/>
+                <field name="tong_thu_nhap" sum="Tổng"/>
+                <field name="tong_khau_tru" sum="Tổng"/>
+                <field name="thuc_linh" sum="Tổng"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_bang_luong_report_graph_emp" model="ir.ui.view">
+        <field name="name">bang.luong.report.graph.emp</field>
+        <field name="model">bang_luong.report</field>
+        <field name="arch" type="xml">
+            <graph type="bar" string="Thực Lĩnh Theo Nhân Viên">
+                <field name="nhan_vien_id" type="row"/>
+                <field name="thuc_linh" type="measure" operator="sum"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_bang_luong_report_graph_month" model="ir.ui.view">
+        <field name="name">bang.luong.report.graph.month</field>
+        <field name="model">bang_luong.report</field>
+        <field name="arch" type="xml">
+            <graph type="line" string="Thực Lĩnh Theo Tháng">
+                <field name="thang" type="row"/>
+                <field name="thuc_linh" type="measure" operator="sum"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="view_bang_luong_report_pivot" model="ir.ui.view">
+        <field name="name">bang.luong.report.pivot</field>
+        <field name="model">bang_luong.report</field>
+        <field name="arch" type="xml">
+            <pivot string="Phân Tích Thu Nhập">
+                <field name="nhan_vien_id" type="row"/>
+                <field name="thang" type="column"/>
+                <field name="thuc_linh" type="measure" operator="sum"/>
+                <field name="tong_thu_nhap" type="measure" operator="sum"/>
+                <field name="tong_khau_tru" type="measure" operator="sum"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Actions for Report -->
+    <record id="action_bang_luong_report" model="ir.actions.act_window">
+        <field name="name">Báo Cáo Lương</field>
+        <field name="res_model">bang_luong.report</field>
+        <field name="view_mode">tree,graph,pivot</field>
+    </record>
+
+    <record id="action_bang_luong_report_graph" model="ir.actions.act_window">
+        <field name="name">Phân Tích Lương Nhân Viên</field>
+        <field name="res_model">bang_luong.report</field>
+        <field name="view_mode">graph,tree,pivot</field>
+        <field name="view_id" ref="view_bang_luong_report_graph_emp"/>
+    </record>
+
+    <!-- Enhanced Dashboard - Remove invalid dashboard view -->
+    
+    <record id="action_bang_luong_dashboard_advanced" model="ir.actions.act_window">
+        <field name="name">Dashboard Lương Nâng Cao</field>
+        <field name="res_model">bang_luong</field>
+        <field name="view_mode">graph,tree,form</field>
+        <field name="view_id" ref="view_bang_luong_graph_nv"/>
+    </record>
+</odoo>

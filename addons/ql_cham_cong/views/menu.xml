@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem
+            id="menu_root"
+            name="Chấm Công"
+            sequence="0"/>
+          
+        <menuitem name="Lịch Đăng Ký Làm Việc" 
+            id="menu_lich_lam_viec" 
+            parent="menu_root" 
+            sequence="1"
+            action="action_lich_lam_viec"
+        />
+        <menuitem name="Điểm Danh" 
+            id="menu_diem_danh" 
+            parent="menu_root" 
+            sequence="2"
+            action="action_diem_danh"
+        />
+        <menuitem name="Yêu Cầu Nghỉ Phép" 
+            id="menu_yeu_cau_nghi_phep" 
+            parent="menu_root" 
+            sequence="3"
+            action="action_yeu_cau_nghi_phep"
+        />
+        <menuitem name="Ca Làm Việc" 
+            id="menu_ca_lam_viec" 
+            parent="menu_root" 
+            sequence="4"
+            action="action_ca_lam_viec"
+        />
+        <menuitem name="Bảng Công Tháng" 
+            id="menu_bang_cong_thang" 
+            parent="menu_root" 
+            sequence="5"
+            action="action_bang_cong_thang"
+        />
+        <!-- <menuitem name="Lịch Sử Đăng Ký" 
+            id="menu_lich_su_dang_ky" 
+            parent="menu_root" 
+            sequence="6"
+            action="action_lich_su_dang_ky"
+        /> -->
+    </data>
+</odoo>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Graph View: Tổng lương theo nhân viên -->
+    <record id="view_bang_luong_graph_nv" model="ir.ui.view">
+        <field name="name">bang.luong.graph.nhan_vien</field>
+        <field name="model">bang_luong</field>
+        <field name="arch" type="xml">
+            <graph type="bar" string="Tổng Lương Theo Nhân Viên">
+                <field name="nhan_vien_id" type="row"/>
+                <field name="thuc_linh" type="measure" operator="sum"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Graph View: Tổng lương theo tháng -->
+    <record id="view_bang_luong_graph_thang" model="ir.ui.view">
+        <field name="name">bang.luong.graph.thang</field>
+        <field name="model">bang_luong</field>
+        <field name="arch" type="xml">
+            <graph type="line" string="Tổng Lương Theo Tháng">
+                <field name="thang" type="row"/>
+                <field name="thuc_linh" type="measure" operator="sum"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Graph View: Thu nhập vs Khấu trừ -->
+    <record id="view_bang_luong_graph_revenue" model="ir.ui.view">
+        <field name="name">bang.luong.graph.revenue</field>
+        <field name="model">bang_luong</field>
+        <field name="arch" type="xml">
+            <graph type="bar" string="Thu Nhập vs Khấu Trừ">
+                <field name="nhan_vien_id" type="row"/>
+                <field name="tong_thu_nhap" type="measure" operator="sum"/>
+                <field name="tong_khau_tru" type="measure" operator="sum"/>
+            </graph>
+        </field>
+    </record>
+
+    <!-- Pivot View: Phân tích chi tiết lương -->
+    <record id="view_bang_luong_pivot" model="ir.ui.view">
+        <field name="name">bang.luong.pivot</field>
+        <field name="model">bang_luong</field>
+        <field name="arch" type="xml">
+            <pivot string="Phân Tích Chi Tiết Lương" default_order="nhan_vien_id">
+                <field name="nhan_vien_id" type="row"/>
+                <field name="thang" type="column"/>
+                <field name="thuc_linh" type="measure" operator="sum"/>
+                <field name="tong_thu_nhap" type="measure" operator="sum"/>
+                <field name="tong_khau_tru" type="measure" operator="sum"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Updated Action with Graph Views -->
+    <record id="action_bang_luong_graph_nv" model="ir.actions.act_window">
+        <field name="name">Lương Theo Nhân Viên</field>
+        <field name="res_model">bang_luong</field>
+        <field name="view_mode">graph,tree,form</field>
+        <field name="view_id" ref="view_bang_luong_graph_nv"/>
+    </record>
+
+    <record id="action_bang_luong_graph_thang" model="ir.actions.act_window">
+        <field name="name">Lương Theo Tháng</field>
+        <field name="res_model">bang_luong</field>
+        <field name="view_mode">graph,tree,form</field>
+        <field name="view_id" ref="view_bang_luong_graph_thang"/>
+    </record>
+
+    <record id="action_bang_luong_graph_revenue" model="ir.actions.act_window">
+        <field name="name">Thu Nhập vs Khấu Trừ</field>
+        <field name="res_model">bang_luong</field>
+        <field name="view_mode">graph,tree,form</field>
+        <field name="view_id" ref="view_bang_luong_graph_revenue"/>
+    </record>
+
+    <record id="action_bang_luong_pivot" model="ir.actions.act_window">
+        <field name="name">Phân Tích Chi Tiết</field>
+        <field name="res_model">bang_luong</field>
+        <field name="view_mode">pivot,tree,form</field>
+        <field name="view_id" ref="view_bang_luong_pivot"/>
+    </record>
+
+    <record id="action_bang_luong_dashboard" model="ir.actions.act_window">
+        <field name="name">Dashboard Lương</field>
+        <field name="res_model">bang_luong</field>
+        <field name="view_mode">graph,tree,form</field>
+        <field name="view_id" ref="view_bang_luong_graph_nv"/>
+    </record>
+</odoo>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_nhan_vien_form" model="ir.ui.view">
+            <field name="name">nhan_vien_form</field>
+            <field name="model">nhan_vien</field>
+            <field name="arch" type="xml">
+                <form string="Nhân viên">
+                    <sheet>
+                        <div class="oe_read_only" style="font-size:25px; font-weight:bold;">Nhân viên</div>
+                        
+                        <notebook>
+                            <page string="Thông tin chung">
+                                <group>
+                                    <field name="ma_dinh_danh" />
+                                    <field name="ho_ten_dem"/>
+                                    <field name="ten"/>
+                                    <field name="ho_va_ten"/>
+                                    <field name="gioi_tinh"/>
+                                    <field name="que_quan"/>
+                                    <field name="email"/>
+                                    <field name="so_dien_thoai"/>
+                                </group>
+                            </page>
+
+                            <page string="Công việc">
+                                <group>
+                                    <field name="phong_ban_id"/>
+                                    <field name="chuc_vu_id"/>
+                                </group>
+                            </page>
+                        </notebook>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_nhan_vien_tree" model="ir.ui.view">
+            <field name="name">nhan_vien_tree</field>
+            <field name="model">nhan_vien</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_dinh_danh"/>
+                    <field name="ho_ten_dem"/>
+                    <field name="ten"/>
+                    <field name="ho_va_ten"/>
+                    <field name="gioi_tinh"/>
+                    <field name="email"/>
+                    <field name="chuc_vu_id"/>
+                    <field name="phong_ban_id"/>
+                    <field name="so_dien_thoai"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="nhan_vien_search" model="ir.ui.view">
+            <field name="name">nhan_vien_search</field>
+            <field name="model">nhan_vien</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ma_dinh_danh"/>
+                    <field name="ho_va_ten"/>
+                    <field name="gioi_tinh"/>
+                    <field name="email"/>
+                    <field name="chuc_vu_id"/>
+                    <field name="phong_ban_id"/>
+                    <field name="so_dien_thoai"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_nhan_vien" model="ir.actions.act_window">
+            <field name="name">Nhân viên</field>
+            <field name="res_model">nhan_vien</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="nhan_vien_search"/>
+            <field name="context">{'search_default_group_by': False}</field>
+        </record>
+
+        <!-- Action để mở wizard import từ button -->
+        <record id="action_nhan_vien_import_csv_action" model="ir.actions.act_window">
+            <field name="name">Import Nhân Viên</field>
+            <field name="res_model">nhan_vien.import.csv</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

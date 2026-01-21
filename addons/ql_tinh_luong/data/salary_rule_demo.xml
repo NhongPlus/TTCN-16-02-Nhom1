@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Salary Rule Categories -->
+        <record id="salary_rule_category_gross" model="salary.rule.category">
+            <field name="name">Lương Brutto</field>
+            <field name="code">GROSS</field>
+        </record>
+        <record id="salary_rule_category_deduction" model="salary.rule.category">
+            <field name="name">Khấu trừ</field>
+            <field name="code">DEDUCTION</field>
+        </record>
+        <record id="salary_rule_category_net" model="salary.rule.category">
+            <field name="name">Lương Netto</field>
+            <field name="code">NET</field>
+        </record>
+
+        <!-- Salary Rules -->
+        <record id="salary_rule_basic" model="salary.rule">
+            <field name="name">Lương cơ bản</field>
+            <field name="code">BASIC</field>
+            <field name="sequence">10</field>
+            <field name="category_id" ref="salary_rule_category_gross"/>
+            <field name="amount_type">fixed</field>
+            <field name="amount_fixed">0</field>
+            <field name="mo_ta">Lương cơ bản từ hợp đồng</field>
+        </record>
+
+        <record id="salary_rule_gross" model="salary.rule">
+            <field name="name">Lương thực tế (theo công)</field>
+            <field name="code">GROSS</field>
+            <field name="sequence">20</field>
+            <field name="category_id" ref="salary_rule_category_gross"/>
+            <field name="amount_type">python</field>
+            <field name="amount_python_compute">result = payslip.basic_salary * (payslip.worked_days / 26.0)</field>
+            <field name="mo_ta">Lương tính theo số ngày công: BASIC × (Ngày công / 26)</field>
+        </record>
+
+        <record id="salary_rule_ot" model="salary.rule">
+            <field name="name">Trả thêm OT (150%)</field>
+            <field name="code">OT</field>
+            <field name="sequence">30</field>
+            <field name="category_id" ref="salary_rule_category_gross"/>
+            <field name="amount_type">python</field>
+            <field name="amount_python_compute">hourly_rate = payslip.basic_salary / (26 * 8); result = payslip.overtime_hours * hourly_rate * 1.5</field>
+            <field name="mo_ta">Giờ OT × 150%</field>
+        </record>
+
+        <record id="salary_rule_allowance" model="salary.rule">
+            <field name="name">Phụ cấp</field>
+            <field name="code">ALLOWANCE</field>
+            <field name="sequence">40</field>
+            <field name="category_id" ref="salary_rule_category_gross"/>
+            <field name="amount_type">python</field>
+            <field name="amount_python_compute">result = sum([a.amount for a in payslip.allowance_ids])</field>
+            <field name="mo_ta">Tổng phụ cấp từ hợp đồng</field>
+        </record>
+
+        <record id="salary_rule_insurance" model="salary.rule">
+            <field name="name">Bảo hiểm xã hội (10%)</field>
+            <field name="code">INSURANCE</field>
+            <field name="sequence">50</field>
+            <field name="category_id" ref="salary_rule_category_deduction"/>
+            <field name="amount_type">percentage</field>
+            <field name="amount_percentage">10.0</field>
+            <field name="mo_ta">Bảo hiểm xã hội 10% từ lương brutto</field>
+        </record>
+
+        <record id="salary_rule_advance" model="salary.rule">
+            <field name="name">Tạm ứng</field>
+            <field name="code">ADVANCE</field>
+            <field name="sequence">55</field>
+            <field name="category_id" ref="salary_rule_category_deduction"/>
+            <field name="amount_type">fixed</field>
+            <field name="amount_fixed">0</field>
+            <field name="mo_ta">Tạm ứng lương</field>
+        </record>
+
+        <record id="salary_rule_net" model="salary.rule">
+            <field name="name">Lương ròng</field>
+            <field name="code">NET</field>
+            <field name="sequence">100</field>
+            <field name="category_id" ref="salary_rule_category_net"/>
+            <field name="amount_type">python</field>
+            <field name="amount_python_compute">result = payslip.gross - payslip.insurance - payslip.advance</field>
+            <field name="mo_ta">Lương thực lĩnh: GROSS - Bảo hiểm - Tạm ứng</field>
+        </record>
+    </data>
+</odoo>

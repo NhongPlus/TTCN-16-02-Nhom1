@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Bảng lương tháng 1/2024 -->
+        <record id="bang_luong_001_01_2024" model="bang_luong">
+            <field name="nhan_vien_id" ref="ql_nhan_su.nhan_vien_001"/>
+            <field name="thang">1</field>
+            <field name="nam">2024</field>
+            <field name="worked_days">26</field>
+            <field name="overtime_hours">0</field>
+            <field name="advance">0</field>
+            <field name="trang_thai">draft</field>
+        </record>
+
+        <record id="bang_luong_002_01_2024" model="bang_luong">
+            <field name="nhan_vien_id" ref="ql_nhan_su.nhan_vien_002"/>
+            <field name="thang">1</field>
+            <field name="nam">2024</field>
+            <field name="worked_days">20</field>
+            <field name="overtime_hours">5</field>
+            <field name="advance">0</field>
+            <field name="trang_thai">draft</field>
+        </record>
+
+        <record id="bang_luong_003_01_2024" model="bang_luong">
+            <field name="nhan_vien_id" ref="ql_nhan_su.nhan_vien_003"/>
+            <field name="thang">1</field>
+            <field name="nam">2024</field>
+            <field name="worked_days">25</field>
+            <field name="overtime_hours">2</field>
+            <field name="advance">1000000</field>
+            <field name="trang_thai">draft</field>
+        </record>
+
+        <record id="bang_luong_004_01_2024" model="bang_luong">
+            <field name="nhan_vien_id" ref="ql_nhan_su.nhan_vien_004"/>
+            <field name="thang">1</field>
+            <field name="nam">2024</field>
+            <field name="worked_days">23</field>
+            <field name="overtime_hours">0</field>
+            <field name="advance">0</field>
+            <field name="trang_thai">draft</field>
+        </record>
+
+        <record id="bang_luong_005_01_2024" model="bang_luong">
+            <field name="nhan_vien_id" ref="ql_nhan_su.nhan_vien_005"/>
+            <field name="thang">1</field>
+            <field name="nam">2024</field>
+            <field name="worked_days">26</field>
+            <field name="overtime_hours">0</field>
+            <field name="advance">0</field>
+            <field name="trang_thai">draft</field>
+        </record>
+
+        <!-- Bảng lương tháng 2/2024 -->
+        <record id="bang_luong_001_02_2024" model="bang_luong">
+            <field name="nhan_vien_id" ref="ql_nhan_su.nhan_vien_001"/>
+            <field name="thang">2</field>
+            <field name="nam">2024</field>
+            <field name="worked_days">26</field>
+            <field name="overtime_hours">0</field>
+            <field name="advance">0</field>
+            <field name="trang_thai">confirmed</field>
+        </record>
+
+        <record id="bang_luong_002_02_2024" model="bang_luong">
+            <field name="nhan_vien_id" ref="ql_nhan_su.nhan_vien_002"/>
+            <field name="thang">2</field>
+            <field name="nam">2024</field>
+            <field name="worked_days">22</field>
+            <field name="overtime_hours">8</field>
+            <field name="advance">500000</field>
+            <field name="trang_thai">confirmed</field>
+        </record>
+
+        <record id="bang_luong_003_02_2024" model="bang_luong">
+            <field name="nhan_vien_id" ref="ql_nhan_su.nhan_vien_003"/>
+            <field name="thang">2</field>
+            <field name="nam">2024</field>
+            <field name="worked_days">26</field>
+            <field name="overtime_hours">3</field>
+            <field name="advance">0</field>
+            <field name="trang_thai">paid</field>
+        </record>
+
+        <record id="bang_luong_006_01_2024" model="bang_luong">
+            <field name="nhan_vien_id" ref="ql_nhan_su.nhan_vien_006"/>
+            <field name="thang">1</field>
+            <field name="nam">2024</field>
+            <field name="worked_days">24</field>
+            <field name="overtime_hours">0</field>
+            <field name="advance">0</field>
+            <field name="trang_thai">draft</field>
+        </record>
+
+        <record id="bang_luong_010_01_2024" model="bang_luong">
+            <field name="nhan_vien_id" ref="ql_nhan_su.nhan_vien_010"/>
+            <field name="thang">1</field>
+            <field name="nam">2024</field>
+            <field name="worked_days">26</field>
+            <field name="overtime_hours">0</field>
+            <field name="advance">0</field>
+            <field name="trang_thai">draft</field>
+        </record>
+
+        <record id="bang_luong_015_01_2024" model="bang_luong">
+            <field name="nhan_vien_id" ref="ql_nhan_su.nhan_vien_015"/>
+            <field name="thang">1</field>
+            <field name="nam">2024</field>
+            <field name="worked_days">25</field>
+            <field name="overtime_hours">4</field>
+            <field name="advance">1500000</field>
+            <field name="trang_thai">draft</field>
+        </record>
+    </data>
+</odoo>

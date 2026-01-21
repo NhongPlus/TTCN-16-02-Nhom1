@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Wizard Form -->
+    <record id="view_nhan_vien_import_csv_form" model="ir.ui.view">
+        <field name="name">nhan_vien.import.csv.form</field>
+        <field name="model">nhan_vien.import.csv</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <p style="color: #666; margin-bottom: 15px;">
+                        <strong>Hướng dẫn:</strong>
+                        <br/>1. Mở file Excel có dữ liệu nhân viên
+                        <br/>2. Select dữ liệu (tìm đầu từ cột Mã định danh)
+                        <br/>3. Copy (Ctrl+C)
+                        <br/>4. Paste vào ô dưới đây
+                        <br/>5. Nhấn "Import"
+                        <br/><br/>Định dạng: Mã | Họ Đệm | Tên | Họ Và Tên | Giới tính | Email | Chức vụ | Phòng Ban | Số điện thoại
+                    </p>
+                    <field name="csv_data" nolabel="1"/>
+                </group>
+                <footer>
+                    <button name="action_import" type="object" string="Import" class="btn-primary"/>
+                    <button string="Hủy" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_nhan_vien_import_csv" model="ir.actions.act_window">
+        <field name="name">Import Nhân Viên</field>
+        <field name="res_model">nhan_vien.import.csv</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

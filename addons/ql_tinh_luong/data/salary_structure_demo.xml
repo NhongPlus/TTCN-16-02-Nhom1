@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Salary Structures -->
+        <record id="salary_structure_staff" model="salary.structure">
+            <field name="name">Cấu trúc lương Nhân viên</field>
+            <field name="mo_ta">Áp dụng cho nhân viên bình thường</field>
+            <field name="salary_rule_ids" eval="[(6, 0, [
+                ref('ql_tinh_luong.salary_rule_basic'),
+                ref('ql_tinh_luong.salary_rule_gross'),
+                ref('ql_tinh_luong.salary_rule_ot'),
+                ref('ql_tinh_luong.salary_rule_allowance'),
+                ref('ql_tinh_luong.salary_rule_insurance'),
+                ref('ql_tinh_luong.salary_rule_advance'),
+                ref('ql_tinh_luong.salary_rule_net'),
+            ])]"/>
+        </record>
+
+        <record id="salary_structure_manager" model="salary.structure">
+            <field name="name">Cấu trúc lương Quản lý</field>
+            <field name="mo_ta">Áp dụng cho trưởng phòng và quản lý</field>
+            <field name="salary_rule_ids" eval="[(6, 0, [
+                ref('ql_tinh_luong.salary_rule_basic'),
+                ref('ql_tinh_luong.salary_rule_gross'),
+                ref('ql_tinh_luong.salary_rule_allowance'),
+                ref('ql_tinh_luong.salary_rule_insurance'),
+                ref('ql_tinh_luong.salary_rule_advance'),
+                ref('ql_tinh_luong.salary_rule_net'),
+            ])]"/>
+        </record>
+    </data>
+</odoo>

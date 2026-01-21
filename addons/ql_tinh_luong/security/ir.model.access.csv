@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_bang_luong,bang_luong,ql_tinh_luong.model_bang_luong,base.group_user,1,1,1,1
+access_bang_luong_report,bang_luong_report,ql_tinh_luong.model_bang_luong_report,base.group_user,1,0,0,0
+access_bang_luong_wizard,bang_luong_wizard,ql_tinh_luong.model_bang_luong_wizard,base.group_user,1,1,1,0
+access_salary_rule_category,salary_rule_category,ql_tinh_luong.model_salary_rule_category,base.group_user,1,1,1,1
+access_hop_dong,hop_dong,ql_tinh_luong.model_hop_dong,base.group_user,1,1,1,1
+access_hop_dong_type,hop_dong_type,ql_tinh_luong.model_hop_dong_type,base.group_user,1,1,1,1
+access_hop_dong_allowance,hop_dong_allowance,ql_tinh_luong.model_hop_dong_allowance,base.group_user,1,1,1,1

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_ca_lam_viec_tree" model="ir.ui.view">
+        <field name="name">ca.lam.viec.tree</field>
+        <field name="model">ca_lam_viec</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="gio_bat_dau" widget="float_time"/>
+                <field name="gio_ket_thuc" widget="float_time"/>
+                <field name="gio_nghi_trua" widget="float_time"/>
+                <field name="so_gio_tieu_chuan"/>
+                <field name="cho_phep_di_muon"/>
+                <field name="cho_phep_ve_som"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_ca_lam_viec_form" model="ir.ui.view">
+        <field name="name">ca.lam.viec.form</field>
+        <field name="model">ca_lam_viec</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="gio_bat_dau" widget="float_time"/>
+                            <field name="gio_ket_thuc" widget="float_time"/>
+                            <field name="gio_nghi_trua" widget="float_time"/>
+                            <field name="so_gio_tieu_chuan"/>
+                        </group>
+                        <group>
+                            <field name="cho_phep_di_muon"/>
+                            <field name="cho_phep_ve_som"/>
+                            <field name="tinh_ot_sau"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_ca_lam_viec_search" model="ir.ui.view">
+        <field name="name">ca.lam.viec.search</field>
+        <field name="model">ca_lam_viec</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="gio_bat_dau"/>
+                <field name="gio_ket_thuc"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_ca_lam_viec" model="ir.actions.act_window">
+        <field name="name">Ca Làm Việc</field>
+        <field name="res_model">ca_lam_viec</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Tạo ca làm việc mới
+            </p>
+        </field>
+    </record>
+
+</odoo>

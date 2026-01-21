@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_bang_luong_wizard_form" model="ir.ui.view">
+        <field name="name">bang.luong.wizard.form</field>
+        <field name="model">bang_luong.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Tạo Báo Cáo Lương">
+                <group>
+                    <group>
+                        <field name="thang" widget="integer"/>
+                        <field name="nam" widget="integer"/>
+                    </group>
+                    <group>
+                        <field name="phong_ban_id"/>
+                        <field name="chuc_vu_id"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_generate_report" string="Tạo Báo Cáo" type="object" class="btn-primary"/>
+                    <button string="Hủy" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_bang_luong_wizard" model="ir.actions.act_window">
+        <field name="name">Tạo Báo Cáo Lương</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">bang_luong.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>
