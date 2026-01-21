@@ -8,7 +8,7 @@ class BangLuongReport(models.Model):
     _auto = False
     _order = 'thang desc, nam desc'
 
-    nhan_vien_id = fields.Many2one('nhan_vien', string='Nhân viên', readonly=True)
+    nhan_vien_id = fields.Many2one('nhan_vien', string='Nhân viên', readonly=True, ondelete='cascade')
     thang = fields.Integer(string='Tháng', readonly=True)
     nam = fields.Integer(string='Năm', readonly=True)
     

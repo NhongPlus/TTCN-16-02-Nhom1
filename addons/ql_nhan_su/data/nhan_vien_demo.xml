@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Demo Employees (NV001-NV035) -->
+        <record id="nhan_vien_001" model="nhan_vien">
+            <field name="ma_dinh_danh">NV001</field>
+            <field name="ho_ten_dem">Nguyễn Văn</field>
+            <field name="ten">An</field>
+            <field name="gioi_tinh">Nam</field>
+            <field name="email">an.nguyenvan@company.com</field>
+            <field name="so_dien_thoai">0901234567</field>
+        </record>
+
+        <record id="nhan_vien_002" model="nhan_vien">
+            <field name="ma_dinh_danh">NV002</field>
+            <field name="ho_ten_dem">Trần Thị</field>
+            <field name="ten">Bình</field>
+            <field name="gioi_tinh">Nu</field>
+            <field name="email">binh.tranthi@company.com</field>
+            <field name="so_dien_thoai">0901234568</field>
+        </record>
+
+        <record id="nhan_vien_003" model="nhan_vien">
+            <field name="ma_dinh_danh">NV003</field>
+            <field name="ho_ten_dem">Lê Văn</field>
+            <field name="ten">Cường</field>
+            <field name="gioi_tinh">Nam</field>
+            <field name="email">cuong.levan@company.com</field>
+            <field name="so_dien_thoai">0901234569</field>
+        </record>
+
+        <record id="nhan_vien_004" model="nhan_vien">
+            <field name="ma_dinh_danh">NV004</field>
+            <field name="ho_ten_dem">Phạm Thị</field>
+            <field name="ten">Dung</field>
+            <field name="gioi_tinh">Nu</field>
+            <field name="email">dung.phamthi@company.com</field>
+            <field name="so_dien_thoai">0901234570</field>
+        </record>
+
+        <record id="nhan_vien_005" model="nhan_vien">
+            <field name="ma_dinh_danh">NV005</field>
+            <field name="ho_ten_dem">Hoàng Văn</field>
+            <field name="ten">Em</field>
+            <field name="gioi_tinh">Nam</field>
+            <field name="email">em.hoangvan@company.com</field>
+            <field name="so_dien_thoai">0901234571</field>
+        </record>
+
+        <record id="nhan_vien_006" model="nhan_vien">
+            <field name="ma_dinh_danh">NV006</field>
+            <field name="ho_ten_dem">Vũ Thị</field>
+            <field name="ten">Phượng</field>
+            <field name="gioi_tinh">Nu</field>
+            <field name="email">phuong.vuthi@company.com</field>
+            <field name="so_dien_thoai">0901234572</field>
+        </record>
+
+        <record id="nhan_vien_007" model="nhan_vien">
+            <field name="ma_dinh_danh">NV007</field>
+            <field name="ho_ten_dem">Đỗ Văn</field>
+            <field name="ten">Giang</field>
+            <field name="gioi_tinh">Nam</field>
+            <field name="email">giang.dovan@company.com</field>
+            <field name="so_dien_thoai">0901234573</field>
+        </record>
+
+        <record id="nhan_vien_008" model="nhan_vien">
+            <field name="ma_dinh_danh">NV008</field>
+            <field name="ho_ten_dem">Bùi Thị</field>
+            <field name="ten">Hà</field>
+            <field name="gioi_tinh">Nu</field>
+            <field name="email">ha.buithi@company.com</field>
+            <field name="so_dien_thoai">0901234574</field>
+        </record>
+
+        <record id="nhan_vien_009" model="nhan_vien">
+            <field name="ma_dinh_danh">NV009</field>
+            <field name="ho_ten_dem">Đặng Văn</field>
+            <field name="ten">Hùng</field>
+            <field name="gioi_tinh">Nam</field>
+            <field name="email">hung.dangvan@company.com</field>
+            <field name="so_dien_thoai">0901234575</field>
+        </record>
+
+        <record id="nhan_vien_010" model="nhan_vien">
+            <field name="ma_dinh_danh">NV010</field>
+            <field name="ho_ten_dem">Ngô Thị</field>
+            <field name="ten">Lan</field>
+            <field name="gioi_tinh">Nu</field>
+            <field name="email">lan.ngothi@company.com</field>
+            <field name="so_dien_thoai">0901234576</field>
+        </record>
+
+        <record id="nhan_vien_011" model="nhan_vien">
+            <field name="ma_dinh_danh">NV011</field>
+            <field name="ho_ten_dem">Dương Văn</field>
+            <field name="ten">Minh</field>
+            <field name="gioi_tinh">Nam</field>
+            <field name="email">minh.duongvan@company.com</field>
+            <field name="so_dien_thoai">0901234577</field>
+        </record>
+
+        <record id="nhan_vien_012" model="nhan_vien">
+            <field name="ma_dinh_danh">NV012</field>
+            <field name="ho_ten_dem">Võ Thị</field>
+            <field name="ten">Nga</field>
+            <field name="gioi_tinh">Nu</field>
+            <field name="email">nga.vothi@company.com</field>
+            <field name="so_dien_thoai">0901234578</field>
+        </record>
+
+        <record id="nhan_vien_013" model="nhan_vien">
+            <field name="ma_dinh_danh">NV013</field>
+            <field name="ho_ten_dem">Lý Văn</field>
+            <field name="ten">Phong</field>
+            <field name="gioi_tinh">Nam</field>
+            <field name="email">phong.lyvan@company.com</field>
+            <field name="so_dien_thoai">0901234579</field>
+        </record>
+
+        <record id="nhan_vien_014" model="nhan_vien">
+            <field name="ma_dinh_danh">NV014</field>
+            <field name="ho_ten_dem">Phan Thị</field>
+            <field name="ten">Quỳnh</field>
+            <field name="gioi_tinh">Nu</field>
+            <field name="email">quynh.phanthi@company.com</field>
+            <field name="so_dien_thoai">0901234580</field>
+        </record>
+
+        <record id="nhan_vien_015" model="nhan_vien">
+            <field name="ma_dinh_danh">NV015</field>
+            <field name="ho_ten_dem">Trịnh Văn</field>
+            <field name="ten">Sơn</field>
+            <field name="gioi_tinh">Nam</field>
+            <field name="email">son.trinhvan@company.com</field>
+            <field name="so_dien_thoai">0901234581</field>
+        </record>
+
+        <record id="nhan_vien_016" model="nhan_vien">
+            <field name="ma_dinh_danh">NV016</field>
+            <field name="ho_ten_dem">Mai Thị</field>
+            <field name="ten">Thảo</field>
+            <field name="gioi_tinh">Nu</field>
+            <field name="email">thao.maithi@company.com</field>
+            <field name="so_dien_thoai">0901234582</field>
+        </record>
+
+        <record id="nhan_vien_017" model="nhan_vien">
+            <field name="ma_dinh_danh">NV017</field>
+            <field name="ho_ten_dem">Tô Văn</field>
+            <field name="ten">Tuấn</field>
+            <field name="gioi_tinh">Nam</field>
+            <field name="email">tuan.tovan@company.com</field>
+            <field name="so_dien_thoai">0901234583</field>
+        </record>
+
+        <record id="nhan_vien_018" model="nhan_vien">
+            <field name="ma_dinh_danh">NV018</field>
+            <field name="ho_ten_dem">Đinh Thị</field>
+            <field name="ten">Uyên</field>
+            <field name="gioi_tinh">Nu</field>
+            <field name="email">uyen.dinhthi@company.com</field>
+            <field name="so_dien_thoai">0901234584</field>
+        </record>
+
+        <record id="nhan_vien_019" model="nhan_vien">
+            <field name="ma_dinh_danh">NV019</field>
+            <field name="ho_ten_dem">Hồ Văn</field>
+            <field name="ten">Vinh</field>
+            <field name="gioi_tinh">Nam</field>
+            <field name="email">vinh.hovan@company.com</field>
+            <field name="so_dien_thoai">0901234585</field>
+        </record>
+
+        <record id="nhan_vien_020" model="nhan_vien">
+            <field name="ma_dinh_danh">NV020</field>
+            <field name="ho_ten_dem">Chu Thị</field>
+            <field name="ten">Xuân</field>
+            <field name="gioi_tinh">Nu</field>
+            <field name="email">xuan.chuthi@company.com</field>
+            <field name="so_dien_thoai">0901234586</field>
+        </record>
+
+        <record id="nhan_vien_021" model="nhan_vien">
+            <field name="ma_dinh_danh">NV021</field>
+            <field name="ho_ten_dem">Lưu Văn</field>
+            <field name="ten">Yên</field>
+            <field name="gioi_tinh">Nam</field>
+            <field name="email">yen.luuvan@company.com</field>
+            <field name="so_dien_thoai">0901234587</field>
+        </record>
+
+        <record id="nhan_vien_022" model="nhan_vien">
+            <field name="ma_dinh_danh">NV022</field>
+            <field name="ho_ten_dem">Kiều Thị</field>
+            <field name="ten">Ánh</field>
+            <field name="gioi_tinh">Nu</field>
+            <field name="email">anh.kieuthi@company.com</field>
+            <field name="so_dien_thoai">0901234588</field>
+        </record>
+
+        <record id="nhan_vien_023" model="nhan_vien">
+            <field name="ma_dinh_danh">NV023</field>
+            <field name="ho_ten_dem">Từ Văn</field>
+            <field name="ten">Bảo</field>
+            <field name="gioi_tinh">Nam</field>
+            <field name="email">bao.tuvan@company.com</field>
+            <field name="so_dien_thoai">0901234589</field>
+        </record>
+
+        <record id="nhan_vien_024" model="nhan_vien">
+            <field name="ma_dinh_danh">NV024</field>
+            <field name="ho_ten_dem">Huỳnh Thị</field>
+            <field name="ten">Chi</field>
+            <field name="gioi_tinh">Nu</field>
+            <field name="email">chi.huynhthi@company.com</field>
+            <field name="so_dien_thoai">0901234590</field>
+        </record>
+
+        <record id="nhan_vien_025" model="nhan_vien">
+            <field name="ma_dinh_danh">NV025</field>
+            <field name="ho_ten_dem">Đào Văn</field>
+            <field name="ten">Đạt</field>
+            <field name="gioi_tinh">Nam</field>
+            <field name="email">dat.daovan@company.com</field>
+            <field name="so_dien_thoai">0901234591</field>
+        </record>
+
+        <record id="nhan_vien_026" model="nhan_vien">
+            <field name="ma_dinh_danh">NV026</field>
+            <field name="ho_ten_dem">Tạ Thị</field>
+            <field name="ten">Hoa</field>
+            <field name="gioi_tinh">Nu</field>
+            <field name="email">hoa.tatHi@company.com</field>
+            <field name="so_dien_thoai">0901234592</field>
+        </record>
+
+        <record id="nhan_vien_027" model="nhan_vien">
+            <field name="ma_dinh_danh">NV027</field>
+            <field name="ho_ten_dem">Trương Văn</field>
+            <field name="ten">Khang</field>
+            <field name="gioi_tinh">Nam</field>
+            <field name="email">khang.truongvan@company.com</field>
+            <field name="so_dien_thoai">0901234593</field>
+        </record>
+
+        <record id="nhan_vien_028" model="nhan_vien">
+            <field name="ma_dinh_danh">NV028</field>
+            <field name="ho_ten_dem">Đoàn Thị</field>
+            <field name="ten">Linh</field>
+            <field name="gioi_tinh">Nu</field>
+            <field name="email">linh.doanthi@company.com</field>
+            <field name="so_dien_thoai">0901234594</field>
+        </record>
+
+        <record id="nhan_vien_029" model="nhan_vien">
+            <field name="ma_dinh_danh">NV029</field>
+            <field name="ho_ten_dem">Cao Văn</field>
+            <field name="ten">Nam</field>
+            <field name="gioi_tinh">Nam</field>
+            <field name="email">nam.caovan@company.com</field>
+            <field name="so_dien_thoai">0901234595</field>
+        </record>
+
+        <record id="nhan_vien_030" model="nhan_vien">
+            <field name="ma_dinh_danh">NV030</field>
+            <field name="ho_ten_dem">Hà Thị</field>
+            <field name="ten">Oanh</field>
+            <field name="gioi_tinh">Nu</field>
+            <field name="email">oanh.hathi@company.com</field>
+            <field name="so_dien_thoai">0901234596</field>
+        </record>
+
+        <record id="nhan_vien_031" model="nhan_vien">
+            <field name="ma_dinh_danh">NV031</field>
+            <field name="ho_ten_dem">Nông Văn</field>
+            <field name="ten">Phúc</field>
+            <field name="gioi_tinh">Nam</field>
+            <field name="email">phuc.nongvan@company.com</field>
+            <field name="so_dien_thoai">0901234597</field>
+        </record>
+
+        <record id="nhan_vien_032" model="nhan_vien">
+            <field name="ma_dinh_danh">NV032</field>
+            <field name="ho_ten_dem">Mạc Thị</field>
+            <field name="ten">Quyên</field>
+            <field name="gioi_tinh">Nu</field>
+            <field name="email">quyen.macthi@company.com</field>
+            <field name="so_dien_thoai">0901234598</field>
+        </record>
+
+        <record id="nhan_vien_033" model="nhan_vien">
+            <field name="ma_dinh_danh">NV033</field>
+            <field name="ho_ten_dem">Đặng Văn</field>
+            <field name="ten">Thiện</field>
+            <field name="gioi_tinh">Nam</field>
+            <field name="email">thien.dangvan@company.com</field>
+            <field name="so_dien_thoai">0901234599</field>
+        </record>
+
+        <record id="nhan_vien_034" model="nhan_vien">
+            <field name="ma_dinh_danh">NV034</field>
+            <field name="ho_ten_dem">La Thị</field>
+            <field name="ten">Vy</field>
+            <field name="gioi_tinh">Nu</field>
+            <field name="email">vy.lathi@company.com</field>
+            <field name="so_dien_thoai">0901234600</field>
+        </record>
+
+        <record id="nhan_vien_035" model="nhan_vien">
+            <field name="ma_dinh_danh">NV035</field>
+            <field name="ho_ten_dem">Thái Văn</field>
+            <field name="ten">Đức</field>
+            <field name="gioi_tinh">Nam</field>
+            <field name="email">duc.thaivan@company.com</field>
+            <field name="so_dien_thoai">0901234601</field>
+        </record>
+    </data>
+</odoo>

@@ -4,9 +4,9 @@ class BangLuong(models.Model):
     _name = 'bang_luong'
     _description = 'Bảng lương tháng'
 
-    nhan_vien_id = fields.Many2one('nhan_vien', string='Nhân viên', required=True)
+    nhan_vien_id = fields.Many2one('nhan_vien', string='Nhân viên', required=True, ondelete='cascade')
     hop_dong_id = fields.Many2one('hop_dong', string='Hợp đồng', compute='_compute_hop_dong', store=True)
-    basic_salary = fields.Float(string='Lương cơ bản', compute='_compute_basic_salary', store=True)
+    basic_salary = fields.Float(string='Lương cơ bản (HĐ)', compute='_compute_basic_salary', store=True)
     
     thang = fields.Integer(string='Tháng', required=True)
     nam = fields.Integer(string='Năm', required=True)

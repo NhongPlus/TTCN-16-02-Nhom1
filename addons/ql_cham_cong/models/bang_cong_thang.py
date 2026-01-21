@@ -4,7 +4,7 @@ class BangCongThang(models.Model):
     _name = 'bang_cong_thang'
     _description = 'Bảng công tháng'
 
-    nhan_vien_id = fields.Many2one('nhan_vien', required=True)
+    nhan_vien_id = fields.Many2one('nhan_vien', required=True, ondelete='cascade')
     thang = fields.Integer(required=True)
     nam = fields.Integer(required=True)
 

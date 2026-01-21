@@ -6,7 +6,7 @@ class DiemDanh(models.Model):
     _name = 'diem_danh'
     _description = 'Bảng Điểm Danh'
 
-    nhan_vien_id = fields.Many2one('nhan_vien', string="Nhân Viên", required=True)
+    nhan_vien_id = fields.Many2one('nhan_vien', string="Nhân Viên", required=True, ondelete='cascade')
     ngay_lam_viec = fields.Date(related='lich_lam_viec_id.ngay_lam_viec', store=True)
     ngay_trong_tuan = fields.Char(string="Ngày trong tuần", compute='_compute_ngay_trong_tuan', store=True)
     gio_check_in = fields.Datetime(string="Giờ Check-In")
