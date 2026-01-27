@@ -8,9 +8,9 @@
 </h2>
 <div align="center">
     <p align="center">
-        <img src="docs/logo/aiotlab_logo.png" alt="AIoTLab Logo" width="170"/>
-        <img src="docs/logo/fitdnu_logo.png" alt="AIoTLab Logo" width="180"/>
-        <img src="docs/logo/dnu_logo.png" alt="DaiNam University Logo" width="200"/>
+        <img src="doc/logo/aiotlab_logo.png" alt="AIoTLab Logo" width="170"/>
+        <img src="doc/logo/fitdnu_logo.png" alt="AIoTLab Logo" width="180"/>
+        <img src="doc/logo/dnu_logo.png" alt="DaiNam University Logo" width="200"/>
     </p>
 
 [![AIoTLab](https://img.shields.io/badge/AIoTLab-green?style=for-the-badge)](https://www.facebook.com/DNUAIoTLab)
@@ -87,10 +87,43 @@ Lệnh chạy
 python3 odoo-bin.py -c odoo.conf -u all
 ```
 Người sử dụng truy cập theo đường dẫn _http://localhost:8069/_ để đăng nhập vào hệ thống.
+## 🎮 4. Các chức năng hệ thống
 
-## 🎮 4. Các chức năng
+### 👤 Quản lý Nhân sự
 
+#### Trang quản lý nhân viên
+<img width="1902" height="931" alt="image" src="doc/image/nhanvien-qlnhanvien.png" />
 
+#### Trang quản lý chức vụ
+<img width="1902" height="931" alt="image" src="doc/image/chucvu-qlnhanvien.png" />
+
+#### Trang quản lý đơn vị (Phòng ban)
+<img width="1902" height="931" alt="image" src="doc/image/phongban-qlnhanvien.png" />
+
+#### Trang quản lý hợp đồng
+<img width="1902" height="931" alt="image" src="doc/image/hopdong-qlnhanvien.png" />
+
+### ⏱️ Quản lý Chấm công
+
+#### Trang quản lý bảng công tháng
+<img width="1902" height="931" alt="image" src="doc/image/bangcongthang-qlchamcong.png" />
+
+#### Trang quản lý điểm danh
+<img width="1902" height="931" alt="image" src="doc/image/diemdanh-qlchamcong.png" />
+
+#### Trang quản lý lịch làm việc
+<img width="1902" height="931" alt="image" src="doc/image/lichlamviec-qlchamcong.png" />
+
+### 💰 Quản lý Tính lương
+
+#### Dashboard lương
+<img width="1902" height="931" alt="image" src="doc/image/dashboard-qlluong.png" />
+
+#### Trang quản lý bảng lương
+<img width="1902" height="931" alt="image" src="doc/image/bangluong-qlluong.png" />
+
+#### Trang quản lý hợp đồng lao động và lương
+<img width="1902" height="931" alt="image" src="doc/image/hopdonglaodong-qlluong.png" />
 ## 📝 5. License
 
 © 2024 AIoTLab, Faculty of Information Technology, DaiNam University. All rights reserved.
