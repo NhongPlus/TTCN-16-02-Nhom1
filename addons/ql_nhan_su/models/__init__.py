@@ -4,3 +4,4 @@ from . import nhan_vien_import_csv
 from . import chuc_vu
 from . import phong_ban
 from . import hop_dong
+from . import dao_tao

@@ -31,6 +31,7 @@
         'views/chuc_vu.xml',
         'views/phong_ban.xml',
         'views/hop_dong.xml',
+        'views/dao_tao.xml',
         'views/menu.xml',
     ],
     # only loaded in demonstration mode

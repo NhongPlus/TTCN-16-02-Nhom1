@@ -35,8 +35,7 @@ class YeuCauNghiPhep(models.Model):
     def _compute_so_ngay_nghi(self):
         for rec in self:
             if rec.ngay_bat_dau and rec.ngay_ket_thuc:
-                so_ngay = (rec.ngay_ket_thuc - rec.ngay_bat_dau).days + 1
-                rec.so_ngay_nghi = so_ngay if so_ngay > 0 else 0
+                rec.so_ngay_nghi = (rec.ngay_ket_thuc - rec.ngay_bat_dau).days + 1
             else:
                 rec.so_ngay_nghi = 0
 
@@ -45,7 +44,8 @@ class YeuCauNghiPhep(models.Model):
         for rec in self:
             hop_dong = self.env['hop_dong'].search([
                 ('nhan_vien_id', '=', rec.nhan_vien_id.id),
-                ('state', '=', 'open')], limit=1)
+                ('trang_thai', '=', 'active'),
+            ], limit=1)
             rec.hop_dong_id = hop_dong.id if hop_dong else False
 
     @api.constrains('nhan_vien_id', 'hop_dong_id')
@@ -53,31 +53,26 @@ class YeuCauNghiPhep(models.Model):
         for rec in self:
             hop_dong = self.env['hop_dong'].search([
                 ('nhan_vien_id', '=', rec.nhan_vien_id.id),
-                ('state', '=', 'open')], limit=1)
+                ('trang_thai', '=', 'active'),
+            ], limit=1)
             if not hop_dong:
                 raise ValidationError("Nhân viên này không có hợp đồng đang hoạt động!")
 
     @api.constrains('nhan_vien_id', 'so_ngay_nghi', 'loai_nghi_phep')
     def _check_nghi_phep(self):
-        from datetime import date
         for record in self:
-            if record.so_ngay_nghi <= 0:
-                raise ValidationError("Số ngày nghỉ phải lớn hơn 0.")
-            if record.ngay_bat_dau and record.ngay_bat_dau < date.today():
-                raise ValidationError("Không thể đăng ký nghỉ phép cho ngày đã qua.")
-            hop_dong = self.env['hop_dong'].search([
-                ('nhan_vien_id', '=', record.nhan_vien_id.id),
-                ('state', '=', 'open')], limit=1)
+            hop_dong = self.env['hop_dong'].search([('nhan_vien_id', '=', record.nhan_vien_id.id)], limit=1)
             if hop_dong:
                 max_days = 0
-                if record.loai_nghi_phep == 'nghi_phep' and hasattr(hop_dong, 'ngay_nghi_phep_toi_da'):
+                if record.loai_nghi_phep == 'nghi_phep':
                     max_days = hop_dong.ngay_nghi_phep_toi_da
-                elif record.loai_nghi_phep == 'nghi_om' and hasattr(hop_dong, 'so_ngay_nghi_om'):
+                elif record.loai_nghi_phep == 'nghi_om':
                     max_days = hop_dong.so_ngay_nghi_om
-                elif record.loai_nghi_phep == 'nghi_co_luong' and hasattr(hop_dong, 'ngay_nghi_co_luong'):
+                elif record.loai_nghi_phep == 'nghi_co_luong':
                     max_days = hop_dong.ngay_nghi_co_luong
-                elif record.loai_nghi_phep == 'nghi_dac_biet' and hasattr(hop_dong, 'nghi_phep_dac_biet'):
+                elif record.loai_nghi_phep == 'nghi_dac_biet':
                     max_days = hop_dong.nghi_phep_dac_biet
+                
                 if record.so_ngay_nghi > max_days:
                     raise ValidationError("Số ngày nghỉ %s không được vượt quá %s ngày." % (record.loai_nghi_phep, max_days))
                 else:

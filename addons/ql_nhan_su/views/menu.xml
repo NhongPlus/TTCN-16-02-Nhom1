@@ -29,5 +29,11 @@
             sequence="4"
             action="action_hop_dong"
         />
+        <menuitem name="Đào tạo nhân sự" 
+            id="menu_dao_tao" 
+            parent="menu_root" 
+            sequence="5"
+            action="action_dao_tao"
+        />
     </data>
 </odoo>

@@ -4,3 +4,4 @@ access_nhan_vien_import_csv,nhan_vien.import.csv,model_nhan_vien_import_csv,base
 access_chuc_vu,chuc_vu.chuc_vu,model_chuc_vu,base.group_user,1,1,1,1
 access_phong_ban,phong_ban.phong_ban,model_phong_ban,base.group_user,1,1,1,1
 access_hop_dong,hop_dong.hop_dong,model_hop_dong,base.group_user,1,1,1,1
+access_dao_tao,dao_tao,model_ql_dao_tao,base.group_user,1,1,1,1

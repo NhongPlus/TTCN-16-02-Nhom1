@@ -43,8 +43,7 @@
                 <field name="name"/>
                 <field name="nhan_vien_id"/>
                 <field name="trang_thai"/>
-                <filter string="Đang Hoạt Động" name="active" domain="[('trang_thai', '=', 'active')]"/>
-                <filter string="Hết Hạn" name="expired" domain="[('trang_thai', '=', 'expired')]"/>
+                <!-- Removed invalid filters using trang_thai field -->
             </search>
         </field>
     </record>

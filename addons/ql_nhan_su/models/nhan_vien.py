@@ -35,8 +35,7 @@ class NhanVien(models.Model):
     def _compute_hop_dong(self):
         for rec in self:
             hop_dong = self.env["hop_dong"].search([
-                ("nhan_vien_id", "=", rec.id),
-                ("trang_thai", "=", "hieu_luc")
+                ("nhan_vien_id", "=", rec.id)
             ], limit=1, order="ngay_bat_dau desc")
 
             rec.hop_dong_id = hop_dong.id if hop_dong else False

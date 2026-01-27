@@ -45,10 +45,6 @@ class DiemDanh(models.Model):
         - Check-Out: Ghi nhận thời gian rời đi.
         """
         for rec in self:
-            # Kiểm tra bắt buộc các trường liên quan
-            if not rec.lich_lam_viec_id or not rec.ca_lam_viec or not rec.ngay_lam_viec:
-                raise UserError("Bạn phải chọn đầy đủ Lịch Làm Việc, Ca Làm Việc và Ngày Làm Việc trước khi điểm danh!")
-
             now = fields.Datetime.now()
 
             if not rec.gio_check_in:
@@ -60,6 +56,7 @@ class DiemDanh(models.Model):
                         rec.trang_thai_diem_danh = "dung_gio"
                     else:
                         rec.trang_thai_diem_danh = "muon"
+                
                 rec.gio_check_in = now
             elif not rec.gio_check_out:
                 rec.gio_check_out = now
