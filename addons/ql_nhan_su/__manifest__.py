@@ -27,7 +27,6 @@
         'security/ir.model.access.csv',
         'data/nhan_vien_demo.xml',
         'views/nhan_vien.xml',
-        'views/nhan_vien_import_csv.xml',
         'views/chuc_vu.xml',
         'views/phong_ban.xml',
         'views/hop_dong.xml',

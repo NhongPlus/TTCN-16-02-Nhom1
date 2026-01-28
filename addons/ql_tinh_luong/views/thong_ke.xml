@@ -25,7 +25,7 @@
     </record>
 
     <!-- Graph View: Thu nhập vs Khấu trừ -->
-    <record id="view_bang_luong_graph_revenue" model="ir.ui.view">
+    <!-- <record id="view_bang_luong_graph_revenue" model="ir.ui.view">
         <field name="name">bang.luong.graph.revenue</field>
         <field name="model">bang_luong</field>
         <field name="arch" type="xml">
@@ -35,10 +35,10 @@
                 <field name="tong_khau_tru" type="measure" operator="sum"/>
             </graph>
         </field>
-    </record>
+    </record> -->
 
     <!-- Pivot View: Phân tích chi tiết lương -->
-    <record id="view_bang_luong_pivot" model="ir.ui.view">
+    <!-- <record id="view_bang_luong_pivot" model="ir.ui.view">
         <field name="name">bang.luong.pivot</field>
         <field name="model">bang_luong</field>
         <field name="arch" type="xml">
@@ -50,7 +50,7 @@
                 <field name="tong_khau_tru" type="measure" operator="sum"/>
             </pivot>
         </field>
-    </record>
+    </record> -->
 
     <!-- Updated Action with Graph Views -->
     <record id="action_bang_luong_graph_nv" model="ir.actions.act_window">
@@ -67,19 +67,19 @@
         <field name="view_id" ref="view_bang_luong_graph_thang"/>
     </record>
 
-    <record id="action_bang_luong_graph_revenue" model="ir.actions.act_window">
+    <!-- <record id="action_bang_luong_graph_revenue" model="ir.actions.act_window">
         <field name="name">Thu Nhập vs Khấu Trừ</field>
         <field name="res_model">bang_luong</field>
         <field name="view_mode">graph,tree,form</field>
         <field name="view_id" ref="view_bang_luong_graph_revenue"/>
-    </record>
-
+    </record> -->
+<!-- 
     <record id="action_bang_luong_pivot" model="ir.actions.act_window">
         <field name="name">Phân Tích Chi Tiết</field>
         <field name="res_model">bang_luong</field>
         <field name="view_mode">pivot,tree,form</field>
         <field name="view_id" ref="view_bang_luong_pivot"/>
-    </record>
+    </record> -->
 
     <record id="action_bang_luong_dashboard" model="ir.actions.act_window">
         <field name="name">Dashboard Lương</field>

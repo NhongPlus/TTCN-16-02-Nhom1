@@ -8,6 +8,7 @@ class BangLuong(models.Model):
     hop_dong_id = fields.Many2one('hop_dong', string='Hợp đồng', compute='_compute_hop_dong', store=True)
     basic_salary = fields.Float(string='Lương cơ bản (HĐ)', compute='_compute_basic_salary', store=True)
     
+
     thang = fields.Integer(string='Tháng', required=True)
     nam = fields.Integer(string='Năm', required=True)
     

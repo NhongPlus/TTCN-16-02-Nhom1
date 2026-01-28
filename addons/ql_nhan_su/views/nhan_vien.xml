@@ -78,12 +78,6 @@
             <field name="context">{'search_default_group_by': False}</field>
         </record>
 
-        <!-- Action để mở wizard import từ button -->
-        <record id="action_nhan_vien_import_csv_action" model="ir.actions.act_window">
-            <field name="name">Import Nhân Viên</field>
-            <field name="res_model">nhan_vien.import.csv</field>
-            <field name="view_mode">form</field>
-            <field name="target">new</field>
-        </record>
+       
     </data>
 </odoo>

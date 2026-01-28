@@ -32,7 +32,7 @@
                             <field name="tong_thu_nhap"/>
                             <field name="tong_khau_tru"/>
                             <field name="thuc_linh" readonly="1"/>
-                            <field name="trang_thai" widget="statusbar"/>
+                            <field name="trang_thai" />
                         </group>
                     </group>
                     <group>
@@ -47,7 +47,7 @@
         <field name="name">bang.luong.search</field>
         <field name="model">bang_luong</field>
         <field name="arch" type="xml">
-            <search>
+           <search>
                 <field name="nhan_vien_id"/>
                 <field name="thang"/>
                 <field name="nam"/>
