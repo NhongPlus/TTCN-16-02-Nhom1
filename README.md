@@ -87,9 +87,7 @@ Lệnh chạy
 python3 odoo-bin.py -c odoo.conf -u all
 ```
 Người sử dụng truy cập theo đường dẫn _http://localhost:8069/_ để đăng nhập vào hệ thống.
-## 🎮 4. Các chức năng hệ thống
 
-### 👤 Quản lý Nhân sự
 # 📌 HỆ THỐNG QUẢN LÝ NHÂN SỰ – CHẤM CÔNG – TÍNH LƯƠNG (ODOO)
 
 ## 📖 Giới thiệu
@@ -183,7 +181,9 @@ Hệ thống mô phỏng quy trình quản lý nhân sự thực tế tại doan
 
 ---
 
-## 📌 Nguồn tham khảo
+## 🎮 4. Các chức năng hệ thống
+
+### 👤 Quản lý Nhân sự
 #### Trang quản lý nhân viên
 <img width="1902" height="931" alt="image" src="doc/image/nhanvien-qlnhanvien.png" />
 
