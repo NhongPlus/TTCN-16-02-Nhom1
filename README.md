@@ -90,7 +90,100 @@ Người sử dụng truy cập theo đường dẫn _http://localhost:8069/_ đ
 ## 🎮 4. Các chức năng hệ thống
 
 ### 👤 Quản lý Nhân sự
+# 📌 HỆ THỐNG QUẢN LÝ NHÂN SỰ – CHẤM CÔNG – TÍNH LƯƠNG (ODOO)
 
+## 📖 Giới thiệu
+
+Dự án **Hệ thống Quản lý Nhân sự – Chấm công – Tính lương** được xây dựng trên nền tảng **Odoo**, nhằm hỗ trợ doanh nghiệp quản lý toàn diện các nghiệp vụ liên quan đến nhân sự, thời gian làm việc và tính lương một cách **tập trung – tự động – chính xác**.
+
+Hệ thống mô phỏng quy trình quản lý nhân sự thực tế tại doanh nghiệp, phù hợp cho mục đích **học tập, nghiên cứu và triển khai thử nghiệm** trong môi trường doanh nghiệp vừa và nhỏ.
+
+---
+
+## 🎯 Mục tiêu của dự án
+
+* Xây dựng hệ thống quản lý nhân sự thống nhất trên nền tảng Odoo
+* Tự động hóa quy trình chấm công và tính lương
+* Giảm sai sót thủ công trong quản lý nhân sự
+* Cung cấp báo cáo, thống kê hỗ trợ nhà quản lý ra quyết định
+
+---
+
+## 🧩 Các module chính của hệ thống
+
+### 1️⃣ Module Quản lý nhân sự (ql_nhan_su)
+
+* Quản lý thông tin nhân viên
+* Quản lý phòng ban, chức vụ
+* Quản lý hợp đồng nhân sự
+* Quản lý đào tạo nhân viên
+* Quản lý nghỉ phép và theo dõi trạng thái phê duyệt
+
+---
+
+### 2️⃣ Module Quản lý chấm công (ql_cham_cong)
+
+* Quản lý ca làm việc và lịch làm việc
+* Điểm danh check-in / check-out
+* Tính giờ làm việc thực tế
+* Theo dõi đi muộn, về sớm, tăng ca (OT)
+* Làm cơ sở dữ liệu đầu vào cho tính lương
+
+---
+
+### 3️⃣ Module Quản lý tính lương (ql_tinh_luong)
+
+* Quản lý hợp đồng lao động (lương cơ bản, phụ cấp)
+* Cấu hình cấu trúc lương và quy tắc lương
+* Tự động tính bảng lương hàng tháng
+* Tổng hợp thu nhập, khấu trừ và lương thực lĩnh
+
+---
+
+### 4️⃣ Thống kê và báo cáo
+
+* Dashboard tổng quan
+* Báo cáo lương theo nhân viên, theo tháng
+* Thống kê ngày công, OT
+* Hỗ trợ xuất dữ liệu phục vụ quản lý
+
+---
+
+## 🖼️ Hình ảnh minh họa hệ thống
+
+> 📌 *Hình ảnh giao diện hệ thống được trình bày chi tiết trong thư mục `/images` của repository.*
+
+* Giao diện tổng quan module Quản lý nhân sự
+* Giao diện quản lý nhân viên
+* Giao diện phòng ban, chức vụ
+* Giao diện chấm công và bảng lương
+
+---
+
+## ⚙️ Công nghệ sử dụng
+
+* **Nền tảng:** Odoo
+* **Ngôn ngữ:** Python
+* **Cơ sở dữ liệu:** PostgreSQL
+* **Giao diện:** Odoo Web Client
+* **Hệ điều hành:** Ubuntu / Linux
+
+---
+
+## 📂 Cấu trúc thư mục dự án (tham khảo)
+
+```
+├── ql_nhan_su/
+├── ql_cham_cong/
+├── ql_tinh_luong/
+├── images/
+├── addons/
+├── README.md
+```
+
+---
+
+## 📌 Nguồn tham khảo
 #### Trang quản lý nhân viên
 <img width="1902" height="931" alt="image" src="doc/image/nhanvien-qlnhanvien.png" />
 
